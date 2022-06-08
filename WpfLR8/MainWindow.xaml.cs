@@ -22,6 +22,7 @@ namespace WpfLR8
     {
 
         List<Cursor> cur = new List<Cursor>(29);
+        BitmapImage[] ico = new BitmapImage[2];
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +31,12 @@ namespace WpfLR8
                 typeof(Cursors).GetProperties())
                 cur.Add((Cursor)pi.GetValue(null, null));
             button1.Tag = 0;
+            var rs = Application.GetResourceStream(new Uri("pack://application:,,,/C" + i + ".cur"));
+            cur.Add(new Cursor(rs.Stream));
+            ico[0] = new BitmapImage(new Uri("pack://application:,,,/Computer.ico"));
+            ico[1] = new BitmapImage(new Uri("pack://application:,,,/Folder.ico"));
+            Icon = ico[0];
+            button5.Tag = 0;
         }
 
         private void button1_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -68,6 +75,14 @@ namespace WpfLR8
             Mouse.OverrideCursor = Mouse.OverrideCursor == null ?
                 button1.Cursor : null;
             button4.Content = "Mouse.OverrideCursor=" + (Mouse.OverrideCursor == null ? "null" : Mouse.OverrideCursor.ToString());
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            int k = ((int)button5.Tag + 1) % 2;
+            button5.Content = "Icon " + k;
+            button5.Tag = k;
+            Icon = ico[k];
         }
     }
 }
