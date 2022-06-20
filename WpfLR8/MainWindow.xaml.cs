@@ -31,8 +31,11 @@ namespace WpfLR8
                 typeof(Cursors).GetProperties())
                 cur.Add((Cursor)pi.GetValue(null, null));
             button1.Tag = 0;
-            var rs = Application.GetResourceStream(new Uri("pack://application:,,,/C" + i + ".cur"));
-            cur.Add(new Cursor(rs.Stream));
+            for (int i = 1; i <= 2; i++)
+            {
+                var rs = Application.GetResourceStream(new Uri("pack://application:,,,/C" + i + ".cur"));
+                cur.Add(new Cursor(rs.Stream));
+            }
             ico[0] = new BitmapImage(new Uri("pack://application:,,,/Computer.ico"));
             ico[1] = new BitmapImage(new Uri("pack://application:,,,/Folder.ico"));
             Icon = ico[0];

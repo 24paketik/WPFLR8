@@ -7,4 +7,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="C1.ani" />
+    <None Remove="C1.cur" />
+    <None Remove="C2.cur" />
+    <None Remove="Computer.ico" />
+    <None Remove="ComputerWF.ico" />
+    <None Remove="Folder.ico" />
+    <None Remove="С1.cur" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="C1.cur" />
+    <Resource Include="C2.cur" />
+    <Resource Include="Computer.ico" />
+    <Resource Include="ComputerWF.ico" />
+    <Resource Include="Folder.ico" />
+  </ItemGroup>
+
 </Project>

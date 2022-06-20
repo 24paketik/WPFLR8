@@ -18,5 +18,7 @@
                 MinWidth="200" Margin="5" Click="button4_Click"/>
         <Button x:Name="button5" Content="Icon 0"
                 MinWidth="200" Margin="5" Click="button5_Click"/>
+        <Button x:Name="button6" Content="Show Tray Icon"
+                MinWidth="200" Margin="5" Click="button6_Click"/>
     </UniformGrid>
 </Window>
